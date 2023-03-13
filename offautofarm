@@ -1,0 +1,27 @@
+_G.autoTrainStrength = false
+_G.autoTrainEndurance = false
+_G.autoTrainPsychic = false
+
+spawn(function()
+    while _G.autoTrainStrength == true do
+        local args = {[1] = "Strength"}
+        game:GetService("ReplicatedStorage").Events.Train:FireServer(unpack(args))
+        wait()
+     end
+end)
+
+spawn(function()
+    while _G.autoTrainEndurance == true do
+        local args = {[1] = "Endurance"}
+        game:GetService("ReplicatedStorage").Events.Train:FireServer(unpack(args))
+        wait()
+    end
+end)
+
+spawn(function()
+    while _G.autoTrainPsychic == true do
+        local args = {[1] = "Psychic"}
+        game:GetService("ReplicatedStorage").Events.Train:FireServer(unpack(args))
+        wait()
+    end
+end)
